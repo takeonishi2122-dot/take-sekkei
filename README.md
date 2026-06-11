@@ -6,6 +6,22 @@
 
 `index.html` をブラウザで開きます。
 
+## 現在の公開URL
+
+新しい画像付きサイト:
+
+```text
+https://site-jet-nine-92.vercel.app
+```
+
+旧版サイト:
+
+```text
+https://take-design-old.vercel.app
+```
+
+GitHubでは、旧版を `main` ブランチに残し、新版を `take-sekkei-v2` ブランチで管理します。
+
 ## GitHub Pagesで公開する
 
 この `site` フォルダーをリポジトリのルートとしてGitHubへアップします。
