@@ -1,0 +1,521 @@
+:root {
+  --ink: #18211f;
+  --muted: #5c6762;
+  --line: #d9e1dc;
+  --paper: #f7f7f2;
+  --white: #ffffff;
+  --green: #2f6f58;
+  --blue: #1f6684;
+  --copper: #a25f2d;
+  --charcoal: #18211f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 68px;
+  padding: 14px clamp(20px, 4vw, 56px);
+  color: var(--white);
+  background: rgba(16, 25, 23, 0.76);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.brand,
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--charcoal);
+  background: var(--white);
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.nav {
+  gap: 18px;
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.hero-image,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 17, 0.86), rgba(11, 19, 17, 0.44) 46%, rgba(11, 19, 17, 0.18)),
+    linear-gradient(0deg, rgba(11, 19, 17, 0.78), rgba(11, 19, 17, 0) 48%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(920px, 100%);
+  padding: 150px clamp(20px, 6vw, 76px) 72px;
+  color: var(--white);
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--copper);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: clamp(52px, 7vw, 92px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.hero-lead {
+  margin-bottom: 12px;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(17px, 2vw, 22px);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary-link {
+  background: var(--white);
+  color: var(--charcoal);
+}
+
+.secondary-link {
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+}
+
+.section {
+  padding: 76px clamp(20px, 5vw, 72px);
+}
+
+.section-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.intro {
+  background: var(--white);
+}
+
+.intro-grid,
+.work-layout,
+.credentials-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.24;
+  letter-spacing: 0;
+}
+
+.intro-grid p:last-child,
+.note {
+  color: var(--muted);
+}
+
+.field-section {
+  background: #edf2ef;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.field-item {
+  min-height: 220px;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.field-item h3 {
+  margin-bottom: 14px;
+  color: var(--green);
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.field-item p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.work-section {
+  background: var(--paper);
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-list li {
+  padding: 14px 16px;
+  background: var(--white);
+  border-left: 4px solid var(--blue);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(24, 33, 31, 0.08);
+}
+
+.credentials {
+  color: var(--white);
+  background: var(--charcoal);
+}
+
+.credentials .section-kicker {
+  color: #d99a5f;
+}
+
+.credential-list {
+  display: grid;
+  gap: 12px;
+}
+
+.credential-list p {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-section {
+  background: var(--white);
+}
+
+.contact-box {
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #f1f5f3);
+}
+
+.mail-link {
+  display: inline-flex;
+  overflow-wrap: anywhere;
+  margin: 8px 0 22px;
+  color: var(--blue);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px clamp(20px, 4vw, 56px);
+  color: rgba(255, 255, 255, 0.76);
+  background: #101715;
+  font-size: 14px;
+}
+
+.card-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: #dfe6e2;
+}
+
+.card-stage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 24px;
+  width: min(980px, 100%);
+}
+
+.business-card {
+  aspect-ratio: 91 / 55;
+  min-height: 302px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(24, 33, 31, 0.2);
+}
+
+.business-card.front {
+  background: var(--white);
+}
+
+.business-card.back {
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(24, 33, 31, 0.96), rgba(31, 102, 132, 0.78)),
+    url("assets/hero-water-infrastructure.png") center / cover;
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.card-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--white);
+  background: var(--green);
+  border-radius: 4px;
+  font-size: 22px;
+}
+
+.card-main {
+  margin-top: 28px;
+}
+
+.card-title {
+  margin-bottom: 4px;
+  color: var(--blue);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.card-subtitle {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-footer p,
+.card-person p,
+.back-bottom p {
+  margin: 0;
+}
+
+.card-person {
+  text-align: right;
+}
+
+.back-copy {
+  width: min(360px, 100%);
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.back-bottom {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+}
+
+.qr-placeholder {
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  color: var(--charcoal);
+  background: var(--white);
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.web-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.web-url {
+  overflow-wrap: anywhere;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    position: absolute;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 86vh;
+  }
+
+  .hero-content {
+    padding-top: 168px;
+    padding-bottom: 44px;
+  }
+
+  .intro-grid,
+  .work-layout,
+  .credentials-grid,
+  .field-grid,
+  .work-list,
+  .card-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .field-item {
+    min-height: auto;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .business-card {
+    min-height: 0;
+  }
+}
+
+@media print {
+  body.card-page {
+    display: block;
+    padding: 0;
+    background: white;
+  }
+
+  .card-stage {
+    display: block;
+    width: auto;
+  }
+
+  .business-card {
+    width: 91mm;
+    height: 55mm;
+    min-height: 0;
+    margin: 0 0 8mm;
+    box-shadow: none;
+    border: 0.2mm solid #ccd5d0;
+    break-inside: avoid;
+  }
+}
